@@ -8,7 +8,7 @@ import { IoIosPeople } from "react-icons/io"
 import { ImCross, ImUser } from "react-icons/im"
 import { IoNewspaperSharp, IoHome } from "react-icons/io5"
 
-const Header: React.FC = ({ modalControl }) => {
+const Header = ({ modalControl }) => {
   const navRef = React.useRef();
   const { user, logout, data, oneUser } = useAuth();
   // console.log(oneUser);
