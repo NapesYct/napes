@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { addUser } from "../../config/mongodb"
 
 
-const HeroSection = ({ data }) => {
+const HeroSection = () => {
   const { user } = useAuth();
   const [userData, setUserData] = useState({
     email: "",
