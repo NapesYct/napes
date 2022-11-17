@@ -5,11 +5,11 @@ import Header from '../components/HomeComponents/Header';
 import { sanityClient, urlFor } from '../sanity';
 import { Data } from '../typings';
 
-interface Props {
-  executiveData: [Data]
-}
+// interface Props {
+//   executiveData: [Data]
+// }
 
-const executives = ({ executiveData }: Props) => {
+const executives = ({ executiveData }) => {
   return (
     <>
       <Header />
