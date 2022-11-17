@@ -3,7 +3,7 @@ import React from 'react'
 import ExecutivesCard from '../components/HomeComponents/Executives/ExecutivesCard'
 import Header from '../components/HomeComponents/Header';
 import { sanityClient, urlFor } from '../sanity';
-import { Data } from '../typings';
+
 
 // interface Props {
 //   executiveData: [Data]

@@ -5,14 +5,14 @@ import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import { useRouter } from 'next/router';
 import { useAuth } from '../context/AuthContext';
 
-type Data = {
-  name: string,
-  flutterwave_key: string,
-  age: number,
-  apiKey: string,
-}
+// type Data = {
+//   name: string,
+//   flutterwave_key: string,
+//   age: number,
+//   apiKey: string,
+// }
 
-const paymentForm = ({ name, flutterwave_key, age, apiKey }: Data) => {
+const paymentForm = ({ name, flutterwave_key, age, apiKey }) => {
   const { user } = useAuth()
   const [data, setData] = useState({
     name: '',
@@ -62,7 +62,7 @@ const paymentForm = ({ name, flutterwave_key, age, apiKey }: Data) => {
 
   const handleFlutterPayment = useFlutterwave(config);
 
-  const handlePayment = (e: any) => {
+  const handlePayment = (e) => {
     e.preventDefault()
     if (!data.department || !data.amount || !data.matric_no || !data.name) {
       alert("Please enter all values")
@@ -121,7 +121,7 @@ const paymentForm = ({ name, flutterwave_key, age, apiKey }: Data) => {
 
           </div>
           <label className='text-xl' htmlFor="password">Matric No: </label>
-          <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:bg-blue-100 focus:border-red-600' value={data.matric_no} onChange={(e: any) => setData({
+          <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:bg-blue-100 focus:border-red-600' value={data.matric_no} onChange={(e) => setData({
             ...data, matric_no: e.target.value
           })} type="text" />
           <div>
