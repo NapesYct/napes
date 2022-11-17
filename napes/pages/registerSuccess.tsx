@@ -9,7 +9,7 @@ const registerSuccess = () => {
   const route = useRouter()
   return (
     <>
-      <Header />
+      <Header modalControl={undefined} />
       <div className='bg-green-600 rounded shadow py-5 md:px-10 flex flex-col items-center justify-center font-sans text-white md:w-1/2 mx-auto my-10'>
         <h1 className='text-xl text-center md:text-3xl py-2 '>Registeration Successful</h1>
         <p className='md:text-lg'>Your registration was successful!!!</p>

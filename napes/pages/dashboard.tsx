@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 
 
 
-const DashboardCard = ({ statusPrompt, description }) => {
+const DashboardCard = ({ statusPrompt, description }: any) => {
 
   return (
     <>
@@ -21,7 +21,7 @@ const dashboard = () => {
   const { oneUser } = useAuth();
   return (
     <>
-      <Header />
+      <Header modalControl={undefined} />
       <div className='md:mx-20 mt-5'>
 
         <div className='flex items-center justify-around bg-cyan-400 px-8 py-5 md:px-20 rounded shadow-sm'>

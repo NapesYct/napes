@@ -12,7 +12,7 @@ const principalOfficers = ({ principalOfficers }: Props) => {
   console.log(principalOfficers)
   return (
     <>
-      <Header />
+      <Header modalControl={undefined} />
       <div>
         <div className='bg-gradient-to-r from-red-200 to-red-500 py-40 flex flex-col items-center justify-center'>
           <h1 className='text-5xl font-sans text-slate-50'>Meet All Your Principal Officerss</h1>

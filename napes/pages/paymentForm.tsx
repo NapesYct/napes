@@ -5,7 +5,14 @@ import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import { useRouter } from 'next/router';
 import { useAuth } from '../context/AuthContext';
 
-const paymentForm = ({ apiData }) => {
+type Data = {
+  name: string,
+  flutterwave_key: string,
+  age: number,
+  apiKey: string,
+}
+
+const paymentForm = ({ name, flutterwave_key, age, apiKey }: Data) => {
   const { user } = useAuth()
   const [data, setData] = useState({
     name: '',
@@ -18,7 +25,6 @@ const paymentForm = ({ apiData }) => {
 
   });
   const router = useRouter();
-  console.log(apiData);
 
 
   // const addNapesite = async (id, fullName, email, phone_no, matric_no, department, amount) => {
@@ -34,8 +40,9 @@ const paymentForm = ({ apiData }) => {
   //   }
   // }
 
+
   const config = {
-    public_key: `${apiData.flutterwave_key}`,
+    public_key: `${flutterwave_key}`,
     tx_ref: "NAPES" + Date.now(),
     amount: data.amount,
     currency: 'NGN',
@@ -66,7 +73,7 @@ const paymentForm = ({ apiData }) => {
           console.log(response);
           if (response.status === "successful") {
             closePaymentModal()
-            
+
             router.push("/paymentSuccessful");
           } else {
             router.push("/unsuccessfulPayment")
@@ -85,7 +92,7 @@ const paymentForm = ({ apiData }) => {
 
   return (
     <div>
-      <Header />
+      <Header modalControl={undefined} />
       <div className='flex items-center justify-center bg-cyan-400 py-20'>
         <div className=''>
           <img className='hidden md:block w-1/2 h-1/2' src="/images/mechatronics.png" alt="" />

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import type { NextPage } from 'next'
 import Departments from '../components/HomeComponents/Departments/Departments'
 import ExecutiveMembers from '../components/HomeComponents/Executives/ExecutiveMembers'
 import HeroSection from '../components/HomeComponents/HeroSection'
@@ -11,17 +10,18 @@ import LoginModal from '../components/LoginModal'
 import { useAuth } from '../context/AuthContext';
 import { sanityClient } from '../sanity';
 import * as Realm from 'realm-web';
+import { Data } from '../typings'
 
 
-interface Executives {
-  posts: [Data]
-}
-interface Principal {
-  principalOfficers: [Data]
-}
+// interface Executives {
+//   posts: [Data]
+// }
+// interface Principal {
+//   principalOfficers: [Data]
+// }
 
-type Props = Executives & Principal & Data
-const Home = ({ data, posts, principalOfficers }: Props) => {
+// type Props = Executives & Principal & Data
+const Home = ({ data, posts, principalOfficers }) => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(true);
 

@@ -7,14 +7,8 @@ import { addUser } from '../config/mongodb';
 
 // import { FidgetSpinner } from 'react-loader-spinner';
 
-interface Props {
-  registerModal: ReactNode,
-  loginModal: ReactNode,
-  modal: ReactNode,
-}
 
-
-const RegisterModal: React.FC<Props> = ({ modal, registerModal, loginModal }) => {
+const RegisterModal = ({ modal, registerModal, loginModal }) => {
   const { user, register, setName, name, data, setData, RegErrorMessage, setLoader, loader } = useAuth();
   const router = useRouter()
 
@@ -38,7 +32,7 @@ const RegisterModal: React.FC<Props> = ({ modal, registerModal, loginModal }) =>
     loginModal(true)
   }
 
-  const registerUser = async (e: any) => {
+  const registerUser = async (e) => {
     e.preventDefault();
     setLoader(true);
 
@@ -66,28 +60,28 @@ const RegisterModal: React.FC<Props> = ({ modal, registerModal, loginModal }) =>
           <h2 className={RegErrorMessage && `text-2xl bg-red-500 px-5 py-2 rounded shadow text-white font-bold text-center`}>{RegErrorMessage}</h2>
           <div className='flex flex-col'>
             <label className='text-xl' htmlFor="name">First Name: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.firstName} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.firstName} onChange={(e) => setData({
               ...data, firstName: e.target.value
             })} type="text" required />
           </div>
 
           <div>
             <label className='text-xl' htmlFor="departmenet">Last Name: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.lastName} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.lastName} onChange={(e) => setData({
               ...data, lastName: e.target.value
             })} type="text" required />
           </div>
 
           <div>
             <label className='text-xl' htmlFor="departmenet">Email: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.email} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.email} onChange={(e) => setData({
               ...data, email: e.target.value
             })} type="text" required />
           </div>
 
           <div>
             <label className='text-xl' htmlFor="name">Department: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.departmenet} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.departmenet} onChange={(e) => setData({
               ...data, department: e.target.value
             })} type="text" required />
           </div>
@@ -96,14 +90,14 @@ const RegisterModal: React.FC<Props> = ({ modal, registerModal, loginModal }) =>
 
           <div>
             <label className='text-xl' htmlFor="departmenet">Matric: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.matric} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.matric} onChange={(e) => setData({
               ...data, matric: e.target.value
             })} type="text" required />
           </div>
 
           <div>
             <label className='text-xl' htmlFor="password">Password: </label>
-            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.password} onChange={(e: any) => setData({
+            <input className='input transition ease-linear duration-300 delay-150 focus:border-l-2 focus:border-red-600' value={data.password} onChange={(e) => setData({
               ...data, password: e.target.value
             })} placeholder='Enter Password' type="password" required />
           </div>

@@ -6,7 +6,7 @@ import Header from '../components/HomeComponents/Header';
 const contact = () => {
   return (
     <section className=''>
-      <Header />
+      <Header modalControl={undefined} />
       <div className='bg-green-100 text-center py-20'>
         <h1 className='text-4xl text-gray-800 font-sans font-bold'>Contact Us</h1>
       </div>
@@ -28,7 +28,7 @@ const contact = () => {
             <input className='input' placeholder='Name' type="text" required />
             <input className='input' placeholder='email' type="email" required />
             <input className='input' placeholder='text' type="text" />
-            <textarea name="" id="" cols={"30"} rows="5"></textarea>
+            <textarea name="" id="" cols={30} rows={5}></textarea>
             <button className='button hover: shadow-full transition ease-in-out duration-200 hover:bg-cyan-900 hover:text-white'>Send</button>
           </form>
         </div>

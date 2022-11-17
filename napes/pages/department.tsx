@@ -4,7 +4,7 @@ import Image from 'next/image'
 const department: React.FC = () => {
   return (
     <div>
-      <Image src={"/images/"} />
+      <Image src={"/images/"} width={60} alt="nice image" height={40} />
     </div>
   )
 }

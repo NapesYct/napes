@@ -3,11 +3,17 @@ import Header from '../components/HomeComponents/Header';
 import { sanityClient } from '../sanity';
 import { News } from "../typings"
 
-interface Props {
+interface MyNews {
   news: [News]
 }
 
-const NewsPageCard = ({ title, author, date }) => {
+interface Props {
+  title: string,
+  author: string,
+  date: string,
+}
+
+const NewsPageCard = ({ title, author, date }: Props) => {
   return (
     <div className='relative'>
       <img className=' rounded' src="/images/departments/electricalE.jpg" alt="" />
@@ -20,12 +26,12 @@ const NewsPageCard = ({ title, author, date }) => {
     </div>
   )
 }
-const news = ({ news }: Props) => {
+const news = ({ news }: MyNews) => {
   console.log(news);
 
   return (
     <>
-      <Header />
+      <Header modalControl={undefined} />
       <div className='mx-20'>
         <div className='grid grid-cols-2 gap-5 mb-10 mt-5'>
           <NewsPageCard title="Peter Thiels VC Found Invests Million into Bitcoin, Market Reacts" author="Olawole" date="jan 25, 2018" />

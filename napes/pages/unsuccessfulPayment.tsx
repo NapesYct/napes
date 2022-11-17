@@ -5,7 +5,7 @@ import Header from '../components/HomeComponents/Header'
 const unsuccessfulPayment = () => {
   return (
     <>
-      <Header />
+      <Header modalControl={undefined} />
       <div>
         <h1>Payment Unsuccessful</h1>
       </div>
