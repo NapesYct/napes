@@ -27,7 +27,9 @@ const PrincipalOfficers = ({ officersData }: Props) => {
           officersData.map((data, index) => {
             if (index <= 3) {
               const { name, office, description, mainImage } = data;
-              return <PrincipalOfficersCard avatar={urlFor(mainImage).url()} title={office} name={name} desc={description} bgColor={'bg-slate-800'} />
+              return <div key={data._id}>
+                <PrincipalOfficersCard avatar={urlFor(mainImage).url()} title={office} name={name} desc={description} bgColor={'bg-slate-800'} />
+              </div>
             }
           })
         }

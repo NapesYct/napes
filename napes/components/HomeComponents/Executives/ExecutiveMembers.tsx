@@ -33,7 +33,9 @@ const ExecutiveMembers = ({ executiveData }: Props) => {
 
             if (index <= 3) {
               const { name, office, description, mainImage } = data;
-              return <ExecutivesCard image={urlFor(mainImage).url()} office={office} name={name} desc={description} />
+              return <div key={data._id}>
+                <ExecutivesCard image={urlFor(mainImage).url()} office={office} name={name} desc={description} />
+              </div>
             }
           })
         }
