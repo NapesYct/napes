@@ -12,7 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthContextProvider>
       <Layout>
-        <Component {...pageProps} />
+        {notAuth.includes(router.pathname) ? <Component {...pageProps} /> :
+
+          <Protected>
+            <Component {...pageProps} />
+          </Protected>
+
+        }
 
       </Layout>
     </AuthContextProvider>
