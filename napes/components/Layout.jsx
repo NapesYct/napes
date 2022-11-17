@@ -5,7 +5,6 @@ import Header from './HomeComponents/Header'
 const Layout = ({ children }) => {
   return (
     <div>
-      <Header />
       {children}
       <Footer />
     </div>
